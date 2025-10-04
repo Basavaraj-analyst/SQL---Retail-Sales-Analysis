@@ -31,10 +31,12 @@ Project Structure:-
 
 
 2. Data Exploration & Cleaning
-        1) Record Count: Determine the total number of records in the dataset.
-        2) Customer Count: Find out how many unique customers are in the dataset.
-        3) Category Count: Identify all unique product categories in the dataset.
-        4) Null Value Check: Check for any null values in the dataset and delete records with missing data.
+
+
+  1) Record Count: Determine the total number of records in the dataset.
+  2) Customer Count: Find out how many unique customers are in the dataset.
+  3) Category Count: Identify all unique product categories in the dataset.
+  4)  Null Value Check: Check for any null values in the dataset and delete records with missing data.
 
 
 1) select * from Retail_Sales;
