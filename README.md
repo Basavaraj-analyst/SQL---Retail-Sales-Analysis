@@ -37,23 +37,13 @@ Project Structure:-
         4) Null Value Check: Check for any null values in the dataset and delete records with missing data.
 
 
-select * from Retail_Sales;
+1) select * from Retail_Sales;
 
+2) select COUNT(distinct customer_id) as unique_cust from Retail_Sales;
 
+3) select distinct category as unique_cat from Retail_Sales;
 
-select COUNT(*) from Retail_Sales;
-
-
-
-select COUNT(distinct customer_id) as unique_cust from Retail_Sales;
-
-
-
-select distinct category as unique_cat from Retail_Sales;
-
-
-
-select * from Retail_Sales 
+4) select * from Retail_Sales 
 where 
 	transactions_id is null 
         or sale_date is null 
@@ -79,11 +69,12 @@ where
 3. Data Analysis & Findings
 The following SQL queries were developed to answer specific business questions:
 
-1) Write a SQL query to retrieve all columns for sales made on '2022-11-05:
 
+1) Write a SQL query to retrieve all columns for sales made on '2022-11-05:
 
 select * from Retail_Sales
 where sale_date = '2022-11-05'
+
 
 2) Write a SQL query to calculate the total sales (total_sale) for each category
 
@@ -92,21 +83,21 @@ sum(total_sale) as total_sales
  from Retail_Sales
  group by category
 
- 3)Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category
+ 3) Write a SQL query to find the average age of customers who purchased items from the 'Beauty' category
  
  SELECT
 AVG(age) as avg_age
 from Retail_Sales
 where category = 'Beauty'
 
-4)Write a SQL query to find all transactions where the total_sale is greater than 1000
+4) Write a SQL query to find all transactions where the total_sale is greater than 1000
 
 SELECT *
 from Retail_Sales
 where total_sale >= '1000'
 
 
-5)Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category
+5) Write a SQL query to find the total number of transactions (transaction_id) made by each gender in each category
 
 SELECT
 category,
@@ -132,7 +123,7 @@ ORDER BY
     sale_year, sale_month;
 
 
-    WITH MonthlySales AS (
+WITH MonthlySales AS (
     SELECT 
         YEAR(sale_date) AS sale_year,
         MONTH(sale_date) AS sale_month,
@@ -189,19 +180,31 @@ SELECT
 FROM hourly_sale
 GROUP BY shift
 
-Findings
+* All the SQL queries can be found in the attached Word document.
+
+Findings:-
+
 Customer Demographics: The dataset includes customers from various age groups, with sales distributed across different categories such as Clothing and Beauty.
 High-Value Transactions: Several transactions had a total sale amount greater than 1000, indicating premium purchases.
 Sales Trends: Monthly analysis shows variations in sales, helping identify peak seasons.
 Customer Insights: The analysis identifies the top-spending customers and the most popular product categories.
-Reports
+
+
+Reports:-
+
 Sales Summary: A detailed report summarizing total sales, customer demographics, and category performance.
 Trend Analysis: Insights into sales trends across different months and shifts.
 Customer Insights: Reports on top customers and unique customer counts per category.
-Conclusion
+
+
+
+Conclusion:-
+
 This project serves as a comprehensive introduction to SQL for data analysts, covering database setup, data cleaning, exploratory data analysis, and business-driven SQL queries. The findings from this project can help drive business decisions by understanding sales patterns, customer behavior, and product performance.
 
-How to Use
+
+How to Use:-
+
 Clone the Repository: Clone this project repository from GitHub.
 Set Up the Database: Run the SQL scripts provided in the database_setup.sql file to create and populate the database.
 Run the Queries: Use the SQL queries provided in the analysis_queries.sql file to perform your analysis.
