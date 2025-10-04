@@ -38,7 +38,7 @@ Project Structure:-
   3) Category Count: Identify all unique product categories in the dataset.
   4)  Null Value Check: Check for any null values in the dataset and delete records with missing data.
 
-
+...sql
 1) select * from Retail_Sales;
 
 2) select COUNT(distinct customer_id) as unique_cust from Retail_Sales;
@@ -65,7 +65,7 @@ where
 	or customer_id is null or gender is null or age is null or 
 	category is null or quantiy is null or price_per_unit is null
 
-
+...
 
 
 3. Data Analysis & Findings
